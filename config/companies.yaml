@@ -1,0 +1,186 @@
+# Only verified sources are enabled. Unsupported entries intentionally have null URLs:
+# a URL is added only after its official careers experience is investigated live.
+
+x-critical: &critical
+  enabled: false
+  priority: critical
+  careers_url: null
+  source_mechanism: unverified
+  polling_interval_seconds: 120
+  jitter_seconds: 15
+  scraper: null
+  status: unsupported
+  notes: Awaiting official-source investigation.
+
+x-high: &high
+  enabled: false
+  priority: high
+  careers_url: null
+  source_mechanism: unverified
+  polling_interval_seconds: 180
+  jitter_seconds: 20
+  scraper: null
+  status: unsupported
+  notes: Awaiting official-source investigation.
+
+x-quant: &quant
+  enabled: false
+  priority: quant
+  careers_url: null
+  source_mechanism: unverified
+  polling_interval_seconds: 240
+  jitter_seconds: 30
+  scraper: null
+  status: unsupported
+  notes: Awaiting official-source investigation.
+
+companies:
+  openai:
+    <<: *critical
+    name: OpenAI
+    enabled: true
+    careers_url: https://openai.com/careers/search/
+    source_mechanism: Public Ashby posting API used by the official careers experience
+    scraper: swe_job_radar.scrapers.openai:OpenAIScraper
+    status: supported
+    notes: Live verified 2026-08-31; official page links each role to OpenAI's Ashby board.
+  anthropic: {<<: *critical, name: Anthropic}
+  google:
+    <<: *critical
+    name: Google
+    enabled: true
+    careers_url: https://www.google.com/about/careers/applications/jobs/results/
+    source_mechanism: Structured AF data embedded in official server-rendered search HTML
+    scraper: swe_job_radar.scrapers.google:GoogleScraper
+    status: supported
+    notes: Live verified 2026-08-31; polls recent US engineer/developer/intern searches.
+  meta: {<<: *critical, name: Meta}
+  microsoft: {<<: *critical, name: Microsoft}
+  nvidia: {<<: *critical, name: NVIDIA}
+  apple: {<<: *critical, name: Apple}
+  amazon_aws: {<<: *critical, name: Amazon / AWS}
+  netflix: {<<: *critical, name: Netflix}
+  stripe:
+    <<: *critical
+    name: Stripe
+    enabled: true
+    careers_url: https://stripe.com/careers/search
+    source_mechanism: Complete role index embedded in official Next.js page data
+    scraper: swe_job_radar.scrapers.stripe:StripeScraper
+    status: supported
+    notes: Live verified 2026-08-31; stable Greenhouse IDs are exposed by Stripe's own page.
+  databricks: {<<: *critical, name: Databricks}
+  snowflake: {<<: *critical, name: Snowflake}
+  figma: {<<: *critical, name: Figma}
+  ramp:
+    <<: *critical
+    name: Ramp
+    enabled: true
+    careers_url: https://ramp.com/careers
+    source_mechanism: Public Ashby posting API used by the official careers experience
+    scraper: swe_job_radar.scrapers.ramp:RampScraper
+    status: supported
+    notes: Live verified 2026-08-31; official careers page and postings use Ramp's Ashby board.
+  airbnb: {<<: *critical, name: Airbnb}
+  uber: {<<: *critical, name: Uber}
+  doordash: {<<: *critical, name: DoorDash}
+  roblox: {<<: *critical, name: Roblox}
+  palantir: {<<: *critical, name: Palantir}
+  cloudflare: {<<: *critical, name: Cloudflare}
+  datadog: {<<: *critical, name: Datadog}
+  coinbase: {<<: *critical, name: Coinbase}
+  linkedin: {<<: *critical, name: LinkedIn}
+  pinterest: {<<: *critical, name: Pinterest}
+  reddit: {<<: *critical, name: Reddit}
+  bytedance_tiktok: {<<: *critical, name: ByteDance / TikTok}
+  snap: {<<: *critical, name: Snap}
+  waymo: {<<: *critical, name: Waymo}
+  spacex: {<<: *critical, name: SpaceX}
+  anduril: {<<: *critical, name: Anduril}
+  scale_ai: {<<: *critical, name: Scale AI}
+  coreweave: {<<: *critical, name: CoreWeave}
+  perplexity: {<<: *critical, name: Perplexity}
+  xai: {<<: *critical, name: xAI}
+  applied_intuition: {<<: *critical, name: Applied Intuition}
+  rippling: {<<: *critical, name: Rippling}
+  notion: {<<: *critical, name: Notion}
+  plaid: {<<: *critical, name: Plaid}
+  robinhood: {<<: *critical, name: Robinhood}
+  discord: {<<: *critical, name: Discord}
+
+  brex: {<<: *high, name: Brex}
+  mongodb: {<<: *high, name: MongoDB}
+  confluent: {<<: *high, name: Confluent}
+  cockroach_labs: {<<: *high, name: Cockroach Labs}
+  vercel: {<<: *high, name: Vercel}
+  crowdstrike: {<<: *high, name: CrowdStrike}
+  palo_alto_networks: {<<: *high, name: Palo Alto Networks}
+  rubrik: {<<: *high, name: Rubrik}
+  samsara: {<<: *high, name: Samsara}
+  verkada: {<<: *high, name: Verkada}
+  block: {<<: *high, name: Block}
+  affirm: {<<: *high, name: Affirm}
+  instacart: {<<: *high, name: Instacart}
+  duolingo: {<<: *high, name: Duolingo}
+  harvey: {<<: *high, name: Harvey}
+  glean: {<<: *high, name: Glean}
+  cursor_anysphere: {<<: *high, name: Cursor / Anysphere}
+  openevidence: {<<: *high, name: OpenEvidence}
+  cerebras: {<<: *high, name: Cerebras}
+  groq: {<<: *high, name: Groq}
+  together_ai: {<<: *high, name: Together AI}
+  lambda: {<<: *high, name: Lambda}
+  crusoe: {<<: *high, name: Crusoe}
+  runway: {<<: *high, name: Runway}
+  elevenlabs: {<<: *high, name: ElevenLabs}
+  mistral_ai: {<<: *high, name: Mistral AI}
+  cohere: {<<: *high, name: Cohere}
+  hugging_face: {<<: *high, name: Hugging Face}
+  replit: {<<: *high, name: Replit}
+  retool: {<<: *high, name: Retool}
+  airtable: {<<: *high, name: Airtable}
+  asana: {<<: *high, name: Asana}
+  dropbox: {<<: *high, name: Dropbox}
+  atlassian: {<<: *high, name: Atlassian}
+  github:
+    <<: *high
+    name: GitHub
+    enabled: true
+    careers_url: https://www.github.careers/careers-home/jobs
+    source_mechanism: Public Jibe /api/jobs JSON used by the official careers search
+    scraper: swe_job_radar.scrapers.github:GitHubScraper
+    status: supported
+    notes: Live verified 2026-08-31; official page is Jibe backed and returns full descriptions.
+  gitlab: {<<: *high, name: GitLab}
+  twilio: {<<: *high, name: Twilio}
+  okta: {<<: *high, name: Okta}
+  zscaler: {<<: *high, name: Zscaler}
+  sentinelone: {<<: *high, name: SentinelOne}
+  wiz: {<<: *high, name: Wiz}
+  servicenow: {<<: *high, name: ServiceNow}
+  salesforce: {<<: *high, name: Salesforce}
+  adobe: {<<: *high, name: Adobe}
+  intuit: {<<: *high, name: Intuit}
+  bloomberg: {<<: *high, name: Bloomberg}
+  tesla: {<<: *high, name: Tesla}
+  rivian: {<<: *high, name: Rivian}
+  cruise: {<<: *high, name: Cruise}
+
+  jane_street:
+    <<: *quant
+    name: Jane Street
+    enabled: true
+    careers_url: https://www.janestreet.com/join-jane-street/open-roles/
+    source_mechanism: Official careers-page /jobs/main.json feed
+    scraper: swe_job_radar.scrapers.jane_street:JaneStreetScraper
+    status: supported
+    notes: Live verified 2026-08-31 from the exact endpoint referenced by official page JavaScript.
+  hudson_river_trading: {<<: *quant, name: Hudson River Trading}
+  citadel_securities: {<<: *quant, name: Citadel Securities}
+  two_sigma: {<<: *quant, name: Two Sigma}
+  de_shaw: {<<: *quant, name: D. E. Shaw}
+  optiver: {<<: *quant, name: Optiver}
+  imc_trading: {<<: *quant, name: IMC Trading}
+  drw: {<<: *quant, name: DRW}
+  jump_trading: {<<: *quant, name: Jump Trading}
+  five_rings: {<<: *quant, name: Five Rings}

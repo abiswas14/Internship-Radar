@@ -1,0 +1,18 @@
+{
+  "jobs": [
+    {
+      "id": "job-123",
+      "title": "Software Engineer Intern, Summer 2027",
+      "department": "Engineering",
+      "team": "Platform",
+      "employmentType": "Intern",
+      "location": "San Francisco, CA",
+      "secondaryLocations": [{"location": "New York, NY"}],
+      "isListed": true,
+      "descriptionPlain": "Students graduating between December 2027 and June 2028.",
+      "publishedAt": "2026-08-31T12:00:00Z",
+      "jobUrl": "https://jobs.ashbyhq.com/example/job-123",
+      "applyUrl": "https://jobs.ashbyhq.com/example/job-123/application"
+    }
+  ]
+}

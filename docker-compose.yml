@@ -1,0 +1,14 @@
+services:
+  radar:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_PATH: /app/data/swe-job-radar.db
+    volumes:
+      - radar-data:/app/data
+
+volumes:
+  radar-data:

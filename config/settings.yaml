@@ -1,0 +1,7 @@
+database_path: data/swe-job-radar.db
+concurrency: 8
+per_domain_concurrency: 2
+request_timeout_seconds: 30
+max_retries: 3
+repost_after_days: 30
+user_agent: "SWEJobRadar/0.1 (official public careers monitor)"
